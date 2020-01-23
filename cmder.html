@@ -1,0 +1,356 @@
+# New Encoding Guide
+
+<div class="forum-post__bodyguard" id="content1622445">
+				<strong>The latest avisynth+ plugins pack</strong> download <a rel="noreferrer" target="_blank" href="https://cloud01.opsdata.ch/index.php/s/3KmFJp9Le7JarJ2"><strong>HERE</strong></a> or <a rel="noreferrer" target="_blank" href="https://gitlab.com/AvisynthPlus-Stuff"><strong>HERE</strong></a>*.<br>
+<br>
+*The GitLab repo is private. If you want access send me your GitLab account or email (the GitLab email or the email you will use for the GitLab registration).<br>
+__<br>
+<strong>Avisynth+ environment (skip this part if you have already a working environment)</strong><br>
+<br>
+You have never installed any Avisynth / Avisynth+ version:<br>
+- install <a rel="noreferrer" target="_blank" href="https://github.com/AviSynth/AviSynthPlus/releases">the latest Avisynth+ version</a>.<br>
+    <br>
+You have already installed Avisynth 2.5x/2.6x (Alpha) or very old Avisynth+ version:<br>
+- uninstall the version you have;<br>
+- delete "C:\Program Files (x86)\AviSynth" (or wherever the plugins folder is installed);<br>
+- delete these registry keys:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;- "HKEY_CURRENT_USER\Software\Avisynth"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;- "HKEY_LOCAL_MACHINE\SOFTWARE\Avisynth"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;- "HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Avisynth" (only on 64-bit OS).<br>
+__<br>
+<strong>How to use this plugins pack</strong><br>
+<br>
+Using this plugins pack for the first time:<br>
+- delete (make backup) all plugins **except ConvertStacked, DirectShowSource, ImageSeq, Shibatch, TimeStretch, VDubFilter, colors_rgb.avsi and colors_rgb.txt** in plugins/plugins+/plugins64/plugins64+  before using this pack;<br>
+- install <a rel="noreferrer" target="_blank" href="https://github.com/abbodi1406/vcredist/releases">the latest version of this AIO pack</a>.<br>
+<br>
+There are two options for updating the plugins pack:<br>
+1) (recommended) delete (make backup) all plugins **except ConvertStacked, DirectShowSource, ImageSeq, Shibatch, TimeStretch, VDubFilter, colors_rgb.avsi and colors_rgb.txt** in plugins/plugins+/plugins64/plugins64+  before using this pack (recommended);<br>
+2) overwrite the exitsting plugins folders with the new ones.<br>
+    <br>
+Use <a rel="noreferrer" target="_blank" href="https://forum.doom9.org/showthread.php?t=176079">Avisynth Info Tool</a> to check if everything is ok.<br>
+In case Avisynth Info Tool freezes, delete SupCore.dll, SupT.avsi and SupTitle.dll from the plugins folder(s).<br>
+<strong>------</strong><br>
+<strong>ffms2 and 1 frame off when comparing source vs encode</strong>.<br>
+<br>
+If you used FFVideoSource / FFMS2 as a source filter and x264 for encoding, and you have the 1 frame off issue when comparing source vs encode you should try the following:<br>
+- don't use eac3to to demux the video stream directly to mkv (via Haali);<br>
+- it's recommended to use <a rel="noreferrer" target="_blank" href="https://github.com/Nevcairiel/LAVFilters/releases"><strong>LAV Splitter</strong></a>;<br>
+- use FFVideoSource / FFMS2(...., threads=1) for both encoding process and comparing source vs encode;<br>
+- use x264 --threads CPU_threads_as_a_max_value - by default x264 is using CPU_threads * 1.5.<br>
+<strong>------</strong><br>
+<strong>AvsPmod</strong><br>
+<br>
+Download <a rel="noreferrer" target="_blank" href="https://github.com/gispos/AvsPmod/releases">the latest version</a>.<br>
+Use AvsPmod_v2.6.1.1_.Windows_x86-32.zip for Avisynth+ x86.<br>
+Use AvsPmod_v2.6.1.1_.Windows_x86-64.zip for Avisynth+ x64.<br>
+<strong>------</strong><br>
+<strong>The latest fdkaac, qaac, sox</strong> download <a rel="noreferrer" target="_blank" href="https://cloud01.opsdata.ch/index.php/s/CWptD6kwGSSisHi"><strong>HERE</strong></a>.<br>
+<strong>------</strong><br>
+<strong>x264 r2991 with tMod (jpsdr) patches</strong> download <a rel="noreferrer" target="_blank" href="https://cloud01.opsdata.ch/index.php/s/AwnjYMHJgQCXKEX"><strong>HERE</strong></a>.<br>
+<strong>------</strong><br>
+<strong>Archive</strong> download<a rel="noreferrer" target="_blank" href="https://cloud01.opsdata.ch/index.php/s/3LeBKPjfrpWYR6G"> <strong>HERE</strong></a>.<br>
+<strong>------</strong><br>
+<strong>Avisynth+ 3.4 (r2923+11) clang build, it's ~20% faster than the official MSVC release on GitHub</strong>, download <a rel="noreferrer" target="_blank" href="https://cloud01.opsdata.ch/index.php/s/xeMjWNC6biXcoeC"><strong>HERE</strong></a>.<br>
+<br>
+It's recommended first you have installed <a rel="noreferrer" target="_blank" href="https://github.com/AviSynth/AviSynthPlus/releases"><strong>official release</strong></a> because the installer add the necessary registries and then copy:<br>
+- AviSynth.dll and DevIL.dll go to Windows\System32 for 64-bit and to Windows\SysWOW64 for 32-bit;<br>
+- files from "plugins" go to plugins64+ for AviSynth+ x64 and to plugins+ for AviSynth+ x86.<br>
+<strong>------</strong><br>
+<strong>libdcadec.dll for eac3to built from master branch which has <a rel="noreferrer" target="_blank" href="https://github.com/foo86/dcadec/compare/v0.2.0...master">30 commits</a> on top of <a rel="noreferrer" target="_blank" href="https://github.com/foo86/dcadec/releases">the latest release on GitHub</a>. Included libdcadec.dll in eac3to is even older than the latest release on GitHub</strong> download <a rel="noreferrer" target="_blank" href="https://cloud01.opsdata.ch/index.php/s/fgEHi6E7LQFdSa5"><strong>HERE</strong></a>.<br>
+<strong>------</strong><br>
+<strong>Last changes:</strong><br>
+<strong>plugins_pack_r24:</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">- updated AddBordersMod.avsi - AddBorders is used for the left side when lsat=1;<br>
+- added <a rel="noreferrer" target="_blank" href="https://forum.doom9.org/showthread.php?t=162754">Drawrect.avsi</a> - added high bit depth support and an optional parameter bool "full_range"* (default false);<br>
+- updated FastBlur;<br>
+- updated FixBrightnessProtect3.avsi - added an optional parameter bool "full_range"*;<br>
+- updated LSMASHSource;<br>
+- removed colors_rgb.avsi and colors_rgb.txt - they are coming with Avisynth+ releases;<br>
+- updated masktools2 - 2.2.20.<br>
+<br>
+full_range* - it works only for high bit depth; it determines how the scaling to the input bit depth is done (<a rel="noreferrer" target="_blank" href="http://avisynth.nl/index.php/MaskTools2#Expression_syntax_supporting_bit_depth_independent_expressions">for more info</a>)</blockquote><br>
+------<br>
+<strong>fdkaac_r4:</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">- updated fdk-aac v2.0.1</blockquote><br>
+------<br>
+<strong>qaac_r4:</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">- updated internal AAC dependencies;<br>
+- updated external libs - wavpack@d25f2d9; flac@a3d8927; libsndfile@d397671.</blockquote><br>
+------<br>
+<strong>sox_r4</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">- updated external libs - wavpack@348ff60; twolame 0.4.0; libsndfile@d397671.</blockquote><br>
+------<br>
+<strong>Older changes</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler"><strong>plugins_pack_r23:</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">- <strong>added AddBordersMod.avsi;</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">Usage: - AddBordersMod(clip c, int "left", int "top", int "right", int "bottom", float "lsat", float "tsat", float "rsat", float "bsat", int "color");<br>
+- all parameters are optional;<br>
+- lsat (left side, default 0.88), tsat (top, default 0.20), rsat (right side, default 0.2 for 2px borders / 0.4 for &gt;2px borders), bsat (bottom, default 0.20) - those parameters control the saturation;<br>
+- the default saturation values are set for extreme cases (solid colors) so for more real case scenario lsat=1, tsat=0.4/0.5, rsat=0.4/0.5 (for both cases: bordes &gt; 2px and borders = 2px), bsat=0.4/0.5 should be a good starting point;<br>
+- color parameter (default black);<br>
+- only 4:2:0 color format is supported.<br>
+<br>
+Due to MPEG-2 subsampling dirty lines / chroma bleeding could appear when AddBorders is used (more visible when the area is very saturared). This script should mitigate those effects.<br>
+<br>
+<strong>Source vs AddBorders(0,0,4,4) vs AddBordersMod(0,0,4,4) (check the right side)</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler"><a rel="noreferrer" target="_blank" href="https://imgaa.com/image/5e062523e2d1d"><img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://t.imgaa.com/2019/12/27/5e062523e2d1d_180x180.png" src="https://t.imgaa.com/2019/12/27/5e062523e2d1d_180x180.png"></a> <a rel="noreferrer" target="_blank" href="https://imgaa.com/image/5e062525c9979"><img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://t.imgaa.com/2019/12/27/5e062525c9979_180x180.png" src="https://t.imgaa.com/2019/12/27/5e062525c9979_180x180.png"></a> <a rel="noreferrer" target="_blank" href="https://imgaa.com/image/5e06252763d68"><img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://t.imgaa.com/2019/12/27/5e06252763d68_180x180.png" src="https://t.imgaa.com/2019/12/27/5e06252763d68_180x180.png"></a></blockquote><br>
+<br>
+<strong>Source vs AddBorders(0,2,0,0) vs AddBordersMod(0,2,0,0,tsat=0.5)</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler"><a rel="noreferrer" target="_blank" href="https://imgaa.com/image/5e06257e3901a"><img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://t.imgaa.com/2019/12/27/5e06257e3901a_180x180.png" src="https://t.imgaa.com/2019/12/27/5e06257e3901a_180x180.png"></a> <a rel="noreferrer" target="_blank" href="https://imgaa.com/image/5e062580a06e0"><img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://t.imgaa.com/2019/12/27/5e062580a06e0_180x180.png" src="https://t.imgaa.com/2019/12/27/5e062580a06e0_180x180.png"></a> <a rel="noreferrer" target="_blank" href="https://imgaa.com/image/5e062582214a1"><img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://t.imgaa.com/2019/12/27/5e062582214a1_180x180.png" src="https://t.imgaa.com/2019/12/27/5e062582214a1_180x180.png"></a></blockquote></blockquote><br>
+- updated FastBlur;<br>
+- <strong>updated Fixer.avsi;</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">New parameters added: int "uleft", int "utop", int "uright", int "ubottom", int "uradius", int "vleft", int "vtop", int "vright", int "vbottom", int "vradius", bool "u" , bool "v". Default values are the same as cleft, ctop, cright, cbottom, cradius. "u" and "v" give the opportunity to process only u / v plane or both planes with different settings.<br>
+For processing both chroma planes with same settings "chroma" option is enough.<br>
+"chroma" and "u" / "v" cannot be true at the same time, when "chroma" is true "u" and "v" are false and vice versa. <br>
+"chroma", "u", "v" are false by default when luma is processed too but when only c(u)(v)left / c(u)(v)top / c(u)(v)/right / c(u)(v)bottom option(s) is/are used "chroma" / "u" / "v" are true and luma is false - for example:<br>
+- Fixer(ctop=2) = Fixer(ctop=2, luma=false, chroma=true);<br>
+- Fixer(uleft=2, vbottom=4) = Fixer(uleft=2, vbottom=4, luma=false, u=true, v=true).</blockquote><br>
+- added <a rel="noreferrer" target="_blank" href="https://gist.github.com/pcroland/c1f1e46cd3e36021927eb033e5161298">UpscaleCheck.avsi</a>;<br>
+- updated plugins_JPSDR - HDRTools 0.6.0.</blockquote> <br>
+<strong>plugins_pack_r22:</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">- updated AddGrain - workaround for assert when processing small dimensions clips;<br>
+- added <a rel="noreferrer" target="_blank" href="https://forum.doom9.org/showthread.php?t=177120">ColourWarp</a>;<br>
+- updated Corners.avsi;<br>
+- updated DGDecode - dll filename changed to MPEG2DecPlus(64), build from <a rel="noreferrer" target="_blank" href="https://github.com/chikuzen/MPEG2DecPlus">@7070644</a>; added <a rel="noreferrer" target="_blank" href="https://forum.doom9.org/showthread.php?p=1891656#post1891656">MPEG2DecPlus_readme.md</a>;<br>
+- updated LSMASHSource;<br>
+- added MatchHistogram - <a rel="noreferrer" target="_blank" href="https://github.com/dubhater/vapoursynth-matchhistogram">port from the vs updated version</a>, usage - MatchHistogram(clip, clip1, clip2, bool raw (default false), bool show (default false), bool debug (default false), int smoothing_window (default 8), bool y (default true), bool u (default false), bool v (default false));<br>
+- changed dll name Shader-x64 to Shader_x64 to avoid AvsPmod warning.</blockquote><br>
+<strong>sox_r3:</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">- updated external sox libs; removed AVX requirement.</blockquote><br>
+<strong>qaac_r3:</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">- updated external qaac libs; added libsndfile and libwavpack (supporting more input formats).</blockquote><br>
+<strong>fdkaac_r3:</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">- updated fdk-aac lib.</blockquote><br>
+<strong>plugins_pack_r21:</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">- added <a rel="noreferrer" target="_blank" href="https://forum.doom9.org/showthread.php?p=1767112#post1767112">Deblock_QED.avsi</a> - added high bit depth support (8...32-bit); added bool full_range* parameter (default=false) for processing high bit depth - full_range=false usually for limited range YUV;<br>
+- updated GrainFactory3.avsi - allowed 32-bit input; added bool full_range* parameter (default=false) for processing high bit depth - full_range=false usually for limited range YUV;<br>
+- updated <a rel="noreferrer" target="_blank" href="https://github.com/HolyWu/L-SMASH-Works/releases">LSMASHSource</a>;<br>
+- updated LibavParse.bat - changed processing for the new index format;<br>
+- added <a rel="noreferrer" target="_blank" href="https://github.com/mysteryx93/AviSynthShader">AviSynthShader</a> (Shader.avsi, Shader(-x64).dll, D3DX9_43.dll);<br>
+- added <a rel="noreferrer" target="_blank" href="http://forum.doom9.net/showthread.php?p=1854679">TemporalDegrain2.avsi</a>;<br>
+- updated balanceborders.avsi - fixed default thresh value; allowed 32-bit input; added bool full_range* parameter (default=false) for processing high bit depth - full_range=false usually for limited range YUV;<br>
+- updated Toon.avsi, bbmod.avsi - allowed 32-bit input; added bool full_range* parameter (default=false) for processing high bit depth - full_range=false usually for limited range YUV;<br>
+- updated ffms2, ffmsindex.exe - ffmpeg n4.3_9cd56bb; dav1d 0.5.1; default threads=1 for AV1;<br>
+<br>
+full_range* - it works only for high bit depth; it determines how the scaling to the input bit depth is done (<a rel="noreferrer" target="_blank" href="http://avisynth.nl/index.php/MaskTools2#Expression_syntax_supporting_bit_depth_independent_expressions">for more info</a>)</blockquote><br>
+<strong>plugins_pack_r20:</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">- added <a rel="noreferrer" target="_blank" href="https://github.com/chikuzen/DCTFilter">DCTFilter</a>;<br>
+- updated MSharpen - port of <a rel="noreferrer" target="_blank" href="https://github.com/dubhater/vapoursynth-msmoosh">vs MSharpen</a>; default values - MSharpen(threshold=6.0, strenght=39.0, mask=false, luma=true, chroma=false, highq=true), highq - is a dummy parameter for backward compatibility;<br>
+- updated Toon.avsi - removed the helper functions; fixed the 16-bit processing;<br>
+- updated YLevels_mt.avsi - added restrictions "input_low and input_high must be different" and "output_low and output_high must be different" to prevent division by zero; fixed show_function type int -&gt; bool and the processing when true;<br>
+- balanceborders.avsi / bbmod.avsi - changed the thresh type int -&gt; float, thresh is always in the range [0,128] (before it was in the range [0,bit depth half range]).</blockquote><br>
+<strong>plugins_pack_r19:</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">- added <a rel="noreferrer" target="_blank" href="https://pastebin.com/3Fnru0B5">Advanced_Denoising.avsi</a>;<br>
+- added <a rel="noreferrer" target="_blank" href="https://forum.doom9.org/showthread.php?t=170364">AnimeIVTC.avsi</a>;<br>
+- added Daa3.avsi;<br>
+- added Delay.avsi;<br>
+- added EEDI2;<br>
+- updated FillBorders - added FillMargins function for backward compatibility; it's just alias for FillBorders(mode=0);<br>
+- added <a rel="noreferrer" target="_blank" href="https://github.com/chikuzen/ReduceFlicker">ReduceFlicker</a> - built from the latest commit;<br>
+- added Toon.avsi - port of vs havsfunc.Toon;<br>
+- added vinverse.</blockquote> <br>
+<strong>plugins_pack_r18:</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">- removed ConvertStacked, DirectShowSource, ImageSeq, Shibatch, TimeStretch, VDubFilter - these plugins are coming with Avisynth+ releases.<br>
+<strong>You must redownload the plugins from Avisynth+ r2915 (ConvertStacked.dll, DirectShowSource.dll, ImageSeq.dll, Shibatch.dll, TimeStretch.dll, VDubFilter.dll) if you're using Avisynth+ r2915 from this thread and you have plugins_pack_r14 or later</strong>;<br>
+- updated FFMS2.avsi - <strong>added new options:</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">- frametypenos - doesn't display the frametype string (Intra, Bi-dir predicted and so on), default=false. When frametype=false frametypenos=true and vice versa. To disable completely frametype - frametype=disable and frametypenos=disable;<br>
+- font;<br>
+- size;<br>
+- textcolor - <a rel="noreferrer" target="_blank" href="http://avisynth.nl/index.php/Preset_colors"><strong>the values are HEX</strong></a>;<br>
+- halocolor - again HEX values;<br>
+- align *;<br>
+- spc *;<br>
+- lsp *;<br>
+- fontwidth *;<br>
+- fontangle *;<br>
+- x *;<br>
+- y *.<br>
+<br>
+* for more information check the equivalent options <a rel="noreferrer" target="_blank" href="http://avisynth.nl/index.php/Subtitle"><strong>HERE</strong></a>;<br>
+<br>
+<img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://images2.imgbox.com/42/60/lY7TQkRY_o.png" src="https://images2.imgbox.com/42/60/lY7TQkRY_o.png"></blockquote><br>
+- updated LibavInfo.avsi - added new options (same as FFMS2.avsi except frametypenos);<br>
+- removed FillBorder.avsi - use FillBorders;<br>
+- removed FillMargins - use FillBorders;<br>
+- updated Fixer.avsi - all options are optional (Fixer(2), Fixer(right=1) and so on). Added restriction - clip width / height should be &gt; left+2, rgith+2 / top+2, bottom+2 or chroma width / height should be &gt; cleft+1, crgith+1 / ctop+1, cbottom+1 when only chroma is processed;<br>
+- updated balanceborders.avsi and bbmod.avsi - all options are optional (bbmod(2), balanceborders(cleft=1) and so on). Added restriction - clip width / height should be &gt; cLeft*4, cRgith*4 / cTop*4, cBottom*4.</blockquote><br>
+<strong>plugins_pack_r17:</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">- added DGDecode;<br>
+- updated FixC(R)Br - added "upper" option (default true), when true pixels with higher luma than prot_val are protected, false - pixels with lower luma than prot_val are protected; now prot_val (float) = luma threshold; prot_val is in range [0,255] for all bit depth;<br>
+- updated LSMASHSource - AV1 support (dav1d);<br>
+- updated ffms2 + ffmsindex - aom replaced with dav1d for AV1 decoding, when decoding AV1 it's recommended to set threads=1 for accurate seeking (still ~50% faster than aom decoding); now max threads are changed to min(0.75*cpu threads, 16) (previous - min(cpu threads, 16)) without performance loss but VP9 should be accurate seeking by default.</blockquote><br>
+<strong>fdkaac.qaac.sox.r2</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">- updated sox</blockquote><br>
+<strong>plugins_pack_r16:</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">- updated DFMDeRainbow.avsi;<br>
+- updated LSFmod.avsi;<br>
+- updated LSMASHSource;<br>
+- updated ffms2 - some HEVC mkv files aren't seeking accurate after the previous update, now they are.</blockquote><br>
+<strong>plugins_pack_r15:</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">- updated Info2;<br>
+- updated InpaintDelogo.avsi;<br>
+- updated LSMASHSource - updated ffmpeg, aom; fixed several seeking issues;<br>
+- updated LibavParse.bat - parsing only the video stream when LWLibavVideoSource is used (for LSMASHSource versions before ~17.08.2019); the location and the name of the index file have to be entered without quotes;<br>
+- updated MiniDeen;<br>
+- added <a rel="noreferrer" target="_blank" href="http://avisynth.nl/index.php/RemapFrames">RemapFrames</a>;<br>
+- updated mcDAA3.avsi;<br>
+- updated neo_f3kdb;<br>
+- updated nnedi3_resize16.avsi;<br>
+- updated plugins_JPSDR.</blockquote><br>
+<strong>plugins_pack_r14</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">- updated AVSInpaint, AddGrain, Hqdn3dY, MiniDeen, avsresize, checkmate, masktools2 - removed AVX instruction set requirement<br>
+- added <a rel="noreferrer" target="_blank" href="https://forum.doom9.org/showthread.php?t=171715">DFMDeRainbow.avsi</a> - replaced Deen with MiniDeen<br>
+- updated MSharpen - registered as MT_NICE_FILTER<br>
+- updated DeHaloHmod.avsi<br>
+- updated DeHalo_alpha_MT2<br>
+- updated DeSpot - ~10% faster build<br>
+- updated Fixer.avsi - fixed default chroma radius when only chroma processed<br>
+- added <a rel="noreferrer" target="_blank" href="http://avisynth.nl/index.php/HQDering_mod">HQDeringmod.avsi</a><br>
+- added <a rel="noreferrer" target="_blank" href="https://forum.doom9.org/showthread.php?t=176860">InpaintDelogo.avsi</a><br>
+- added <a rel="noreferrer" target="_blank" href="https://forum.doom9.org/showthread.php?t=174770">Khameleon.avsi</a><br>
+- added Kirsch.avsi - Kirsch algorithm for edge mask<br>
+- updated LSFmod.avsi<br>
+- updated LSMASHSource - updated ffmpeg; added cache file option; fix some VC-1 issues <br>
+- updated RgTools<br>
+- updated Srestore.avsi<br>
+- added TUnsharp<br>
+- updated debandmask.avsi - added default values that give ~same result as mt_edge("prewitt") but ~2x slower; however debandmask(60,16,4,4,1) with predenoised source gives better result than mt_edge("prewitt")<br>
+- updated ffms2, ffmsindex - updated ffmpeg; workaround some .mp4 seeking issues<br>
+- restored original flash3kyuu_deband (f3kdb with input/output mode) - ~8% faster clang build<br>
+- added <a rel="noreferrer" target="_blank" href="https://github.com/HomeOfAviSynthPlusEvolution/neo_f3kdb">neo_f3kdb</a> - f3kdb with removed doubleweave/stacked format; removed input/output mode option; native high bit depth support; added sample_mode 3/4</blockquote><br>
+<strong>plugins_pack_r13</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">- added <a rel="noreferrer" target="_blank" href="https://pastebin.com/V15XkSAK">DDComb.avsi</a><br>
+- added Hqdn3dY<br>
+- added <a rel="noreferrer" target="_blank" href="https://pastebin.com/hqyLDArX">SeeSaw.avsi</a><br>
+- added <a rel="noreferrer" target="_blank" href="https://pastebin.com/u3B4WFT2">VHSHaloremover.avsi</a><br>
+- added <a rel="noreferrer" target="_blank" href="https://pastebin.com/UL6ycpbp">abcxyz.avsi</a><br>
+- updated avsresize - zimg 2.9.2<br>
+- updated dfttestMC<br>
+- updated masktools2 - 2.2.19</blockquote><br>
+<strong>fdkaac.qaac.sox.r1</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">- updated fdkaac<br>
+- updated qaac dependencies<br>
+- added 32-bit sox, updated 64-bit sox</blockquote><br>
+<strong>plugins_pack_r12a</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">- changed LSFmod.avsi (only x86) encoding from UTF-8 BOM (avs+ doesn't like it) to UTF-8</blockquote><br>
+<strong>plugins_pack_r12</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">- updated AddGrain - port of vs <a rel="noreferrer" target="_blank" href="https://github.com/HomeOfVapourSynthEvolution/VapourSynth-AddGrain">version</a>; high bit depth support (8...32-bit); ~10% faster than 1.7.1 version<br>
+- updated DeHaloHmod.avsi<br>
+- added <a rel="noreferrer" target="_blank" href="https://forum.doom9.org/showthread.php?t=173259">DeSpot</a><br>
+- updated GrainFactory3.avsi - high bit depth support (8...16-bit)<br>
+- updated ResizeX.avsi<br>
+- updated edi_rpow2.avsi</blockquote><br>
+<strong>plugins_pack_r11a</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">- changed FastLineDarken.avsi and SMDegrain.avsi encoding from UTF-8 BOM (avs+ doesn't like it) to UTF-8</blockquote><br>
+<strong>plugins_pack_r11</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">- updated ASTDR.avsi<br>
+- updated DeHalo_alpha.avsi<br>
+- updated DebilinearM.avsi<br>
+- updated FastLineDarken.avsi<br>
+- updated FineDehalo.avsi<br>
+- added GradFun3mod.avsi<br>
+- added GrainFactory3.avsi<br>
+- updated LSFmod.avsi<br>
+- updated MAA2.avsi<br>
+- added <a rel="noreferrer" target="_blank" href="https://github.com/HomeOfAviSynthPlusEvolution/MiniDeen/releases">MiniDeen</a> - ~20% faster clang build than the one on github; removed y/u/v=1 (not process the plane); working with both i420 and YV12 color spaces (YUV/YVU)<br>
+- updated QTGMC.avsi<br>
+- updated ResizeX.avsi<br>
+- updated SMDegrain.avsi<br>
+- added <a rel="noreferrer" target="_blank" href="https://github.com/tp7/checkmate">checkmate</a> - faster ~5% clang build than the one on github</blockquote><br>
+<strong>plugins.pack.r10</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">- added <a rel="noreferrer" target="_blank" href="https://forum.doom9.org/showpost.php?p=1879523&amp;postcount=93">DebilinearM.avsi</a> - stacked and native high bit depth formats supported<br>
+- updated LSMASHSource - removed stacked/double width format; native high bit depth supported; AV1 support added<br>
+- updated ResizeX.avsi<br>
+- updated ffms2/ffmsindex - 5-10% faster build; AV1 support added; fixed VP9 decoding</blockquote><br>
+<strong>plugins.pack.r9</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">- updated <a rel="noreferrer" target="_blank" href="https://github.com/pinterf/AvsInpaint">AVSInpaint</a> - added clang build up to ~50% faster than <a rel="noreferrer" target="_blank" href="https://github.com/pinterf/AvsInpaint/releases">msvc build</a><br>
+- added <a rel="noreferrer" target="_blank" href="https://forum.doom9.org/showthread.php?t=176564">FastBlur</a><br>
+- added <a rel="noreferrer" target="_blank" href="https://forum.doom9.org/showthread.php?t=176563">Info2</a><br>
+- updated <a rel="noreferrer" target="_blank" href="https://github.com/msg7086/flash3kyuu_deband">flash3kyuu_deband</a> - removed stacked format; Avisynth+ native high bit depth support; added intel compiler build ~10% faster than <a rel="noreferrer" target="_blank" href="https://forum.doom9.org/showpost.php?p=1878157&amp;postcount=18">msvc build</a></blockquote><br>
+<strong>plugins.pack.r8</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">- updated DGHDRtoSDR<br>
+- added DGPQtoHLG<br>
+- updated InpaintFunc.avsi<br>
+- updated avsresize (the latest zimg with Spline36 fixed)<br>
+- updated ffms2/ffmsindex (fixed VC-1 1 frame off)</blockquote><br>
+<strong>plugins.pack.r7</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">- updated avsresize - used previous zimg version since the latest one has a bug (spline36 wrong output)<br>
+- added <a rel="noreferrer" target="_blank" href="https://forum.doom9.org/showthread.php?s=d7bbd2678054fea84f077c73caac325c&amp;t=175357">Duplicity2/DropDeadGorgeous</a></blockquote><br>
+<strong>plugins.pack.r6</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">- added <a rel="noreferrer" target="_blank" href="https://forum.doom9.org/showpost.php?p=1665492&amp;postcount=27">ASTDR.avsi</a><br>
+- added DeCross - <a rel="noreferrer" target="_blank" href="https://github.com/dubhater/vapoursynth-decross">vs v2 port</a><br>
+- added <a rel="noreferrer" target="_blank" href="https://github.com/pinterf/Deflicker">Deflicker</a><br>
+- added <a rel="noreferrer" target="_blank" href="https://forum.doom9.org/showpost.php?p=1875042&amp;postcount=1">Estimate_Nnedi3_Rpow2.avsi</a><br>
+- updated Fixer.avsi - added optional parameter "luma" (default=true). When luma=false and chroma=true only chroma planes are processed<br>
+- added updated <a rel="noreferrer" target="_blank" href="https://github.com/jpsdr/plugins_JPSDR">plugins_JPSDR</a> and removed ResampleMT, aWarpsharpMT, nnedi3, HDRTools<br>
+- updated LSMASHSource (latest lsmash and ffmpeg)<br>
+- added <a rel="noreferrer" target="_blank" href="https://forum.doom9.org/showpost.php?p=1759271&amp;postcount=1">LoadDLL</a><br>
+- added <a rel="noreferrer" target="_blank" href="https://forum.doom9.org/showpost.php?p=1874531&amp;postcount=21">MCDegrain</a><br>
+- added <a rel="noreferrer" target="_blank" href="https://forum.doom9.org/showpost.php?p=1508638&amp;postcount=12">MCDegrainSharp</a><br>
+- updated SMDegrain<br>
+- added <a rel="noreferrer" target="_blank" href="https://pastebin.com/qLkBTbiF">aWarpSharp4xx</a><br>
+- added autoLoadDLLs, moved libfftw3f-3 and fft3w from external folder to plugins folder - now they are loaded auto from plugin folder; no need copying them to external folder<br>
+- added <a rel="noreferrer" target="_blank" href="http://avisynth.nl/index.php/Hqdn3d">hqdn3d</a> (new faster builds)<br>
+- added <a rel="noreferrer" target="_blank" href="https://forum.doom9.org/showthread.php?p=1639679#post1639679">mcDAA3.avsi</a><br>
+- removed msvcrxxx - it's better using <a rel="noreferrer" target="_blank" href="https://github.com/abbodi1406/vcredist/releases">this AIO pack</a><br>
+- updated avsresize (latest zimg)<br>
+- updated ffms2 (latest ffmpeg)<br>
+- added <a rel="noreferrer" target="_blank" href="https://pastebin.com/zax90CVq">dfttestMC</a><br>
+- added <a rel="noreferrer" target="_blank" href="https://pastebin.com/mkYiBwUq">edi_rpow2</a></blockquote><br>
+<strong>plugins.pack.r5</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">- updated DePan and DePanEstimate<br>
+- added <a rel="noreferrer" target="_blank" href="https://forum.doom9.org/showpost.php?p=1873783&amp;postcount=2">FFMS_MakeMultiPartScripts.avsi and FFMS_MakeMultiPartScripts_Client.avs</a><br>
+- updated FluxSmooth<br>
+- added <strong>LibavParse.bat and LibavInfo.avsi</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">A function similar to FFInfo for LWLibavVideoSource.<br>
+- LibavParse.bat creates txt file from the index file (*.lwi). This file contains info about the frame type and the frame number. When the batch file is started, you have to:<br>
+1. Enter the location of index file: - the location of .lwi file.<br>
+2. Enter the name of index file: - the name of .lwi file.<br>
+3. Enter the location for the parsed file: - the location of the new created file. This line is optional and if nothing is entered, the location will be the same as the location of .lwi file.<br>
+<br>
+%temp% folder is used for saving temporary files. They are deleted after the process is finished.<br>
+Sorting data is done with PowerShell, so you need have installed PowerShell.<br>
+<br>
+For example, ~40 sec are needed for creating a final file from .lwi with 177000 frames. Less frames - faster process.<br>
+<br>
+- LibavInfo("file_path") - requires path to the new created file. It requires RT_Stats.<br>
+<strong>If one I frame is key frame, "(IDR)" is displayed:</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler"><a rel="noreferrer" target="_blank" href="https://imgaa.com/image/5cdc80e94a044"><img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://t.imgaa.com/2019/05/15/5cdc80e94a044_180x180.png" src="https://t.imgaa.com/2019/05/15/5cdc80e94a044_180x180.png"></a></blockquote></blockquote><br>
+- added LocateFrames.avsi<br>
+- added <a rel="noreferrer" target="_blank" href="https://forum.doom9.org/showpost.php?p=1873782&amp;postcount=1">MakeMultiPartScripts.avs</a><br>
+- added MatchFrames.avsi<br>
+- added <a rel="noreferrer" target="_blank" href="https://forum.doom9.org/showthread.php?t=165479">RT_Stats</a><br>
+- added SirPlant.avsi<br>
+- updated <strong>TCannyMod</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">It seems the latest versions have a bug (the line at the bottom). Used 1.0.0, the latest version, unaffected.</blockquote><br>
+- updated <strong>avsresize and avsresize.readme</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">Added new option "dither" to z_...Resize functions. Values are the same as z_ConvertFormat(dither_type=). Default "none". For example:<br>
+z_Spline36Resize(x, y) = z_Spline36Resize(x, y, dither="none") - no dither<br>
+z_Spline36Resize(x, y, dither="error_diffusion") - used error_diffusion dither</blockquote><br>
+- updated mvtools2<br>
+- added s_ExLogo.avsi</blockquote><br>
+<strong>plugins.pack.r4</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">- added <a rel="noreferrer" target="_blank" href="https://github.com/mysteryx93/Avisynth-Deblock">Deblock</a><br>
+- added TTempSmooth<br>
+- updated <strong>avsresize</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">zimg doesn't have Blackman, Spline64, Gauss, Sinc resize algos. Some functions were misleading/duplicated and they are removed - z_BlackmanResize (= z_LanczosResize), z_Spline64Resize (= z_Spline36Resize), z_GaussResize (= z_BicubicResize), z_SincResize (= z_Lanczos4Resize).</blockquote><br>
+- updated avsresize.readme<br>
+- updated <strong>Bifrost</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">Bifrost v.2 works on blocks and it has bug when the frame height isn't a multiple of the block height. Now again works on whole frame like v1.1 and it's actually ~3x faster.</blockquote><br>
+- added ExInpaint<br>
+- added rm_logo.avsi<br>
+- updated zlibDynamicTonemap.avsi<br>
+- updated FluxSmooth<br>
+- updated <strong>SupT.avsi</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">Added new optional parameters (s_width, s_height, resizer(default Lanczos4Resize)) for scenarios when sup resolution is different than video resolution. s_width, s_height , resize are options of the sup file. Example for 4K video:<br>
+SupT("subtitle.sup") - 4K video and 4K resolution of the sup file<br>
+SupT("subtitle.sup", s_width=1920, s_height=1080) - 4K video and 1080p resolution of the sup file</blockquote></blockquote><br>
+<strong>plugins.pack.r3</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">- updated zlibDynamicTonemap<br>
+- updated debandmask - high bit-depth and stack16_in/out support<br>
+- updated FixChromaBleedingMod - removed fast processing ("f") causing issues with non-even chroma size, high bit-depth support</blockquote><br>
+<strong>plugins.pack.r2</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">- added <a rel="noreferrer" target="_blank" href="https://github.com/chikuzen/TMM2">TMM2</a><br>
+- updated Bifrost with faster build (~20% faster 64-bit version)(Didn't test 32-bit version)<br>
+- added modified <a rel="noreferrer" target="_blank" href="https://forum.doom9.org/showpost.php?p=1851933&amp;postcount=6">ChromaShiftSP2</a> with high bit-depth support<br>
+- added modified <a rel="noreferrer" target="_blank" href="http://avisynth.nl/index.php/FixChromaBleedingMod">FixChromaBleedingMod</a> to work with ChromaShiftSP2</blockquote><br>
+<strong>plugins.pack.r1</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">- added DeDot - <a rel="noreferrer" target="_blank" href="https://github.com/dubhater/vapoursynth-dedot">vs port</a><br>
+- added TComb - 32-bit version from <a rel="noreferrer" target="_blank" href="https://github.com/Elegant996/TComb">here</a>, 64-bit version compiled from tritical original source because Elegant996 64-bit version have different output<br>
+- added TDeint<br>
+- updated zlibDynamicTonemap<br>
+- updated VariableBlur<br>
+- added <strong>SupT</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">SupT(clip c, string filename, bool "forcedOnly", bool "swapCbCr", bool "relocate", string "relocOffset", int "radius", int "contrast") - script for <a rel="noreferrer" target="_blank" href="http://avisynth.nl/index.php?title=SupTitle">SupTitle</a> high bit-depth support. Inspired from <a rel="noreferrer" target="_blank" href="https://forum.doom9.org/showpost.php?p=1866983&amp;postcount=7">this post</a>. The same usage as SupTitle except "radius" (default=4) which controls mask radius and "contrast" (default=128), both have no effect for 8-bit video. Support 8...32-bit video, requires SupTitle, dither. The options between "" are optional. <strong>8-bit vs 10-bit radius=4 vs 10-bit radius=3</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler"><a rel="noreferrer" target="_blank" href="https://imgaa.com/image/5cafdd199493c"><img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://t.imgaa.com/2019/04/12/5cafdd199493c_180x180.png" src="https://t.imgaa.com/2019/04/12/5cafdd199493c_180x180.png"></a> <a rel="noreferrer" target="_blank" href="https://imgaa.com/image/5cafdd1d0c2a1"><img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://t.imgaa.com/2019/04/12/5cafdd1d0c2a1_180x180.png" src="https://t.imgaa.com/2019/04/12/5cafdd1d0c2a1_180x180.png"></a> <a rel="noreferrer" target="_blank" href="https://imgaa.com/image/5cafdd1ed14be"><img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://t.imgaa.com/2019/04/12/5cafdd1ed14be_180x180.png" src="https://t.imgaa.com/2019/04/12/5cafdd1ed14be_180x180.png"></a></blockquote></blockquote></blockquote><br>
+<strong>avs+ plugins update 04.04.2019</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">- changed Fixer radius (2) to max of left/top/right/bottom+2<br>
+- updated <a rel="noreferrer" target="_blank" href="https://github.com/pinterf/FluxSmooth/releases">FluxSmooth</a><br>
+- added <a rel="noreferrer" target="_blank" href="https://pastebin.com/SHQZjVJ5">debandmask</a> (avs+ version fixed)<br>
+- added Narkyy's zlibDynamicTonemap<br>
+- added port of <a rel="noreferrer" target="_blank" href="https://github.com/dubhater/vapoursynth-fillborders">vs FillBorders</a> <strong>Spoiler</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">- usage: FillBorders(left, top, right, bottom, "mode")<br>
+- "mode" is optional; default = FillMargins;<br>
+- options for "mode" - 0 (FillMargins), 1 (Repeat), 2 (Mirror).<br>
+- high bit-depth support<br>
+- it's a bit faster and uses less memory than FillBorder<br>
+<br>
+<strong>FillBorders(1,1,1,1) vs FillBorder(1,1,1,1)</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler"><a rel="noreferrer" target="_blank" href="https://imgaa.com/image/5ca699761516b"><img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://t.imgaa.com/2019/04/04/5ca699761516b_250x250.png" src="https://t.imgaa.com/2019/04/04/5ca699761516b_250x250.png"></a> <a rel="noreferrer" target="_blank" href="https://imgaa.com/image/5ca699777de39"><img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://t.imgaa.com/2019/04/04/5ca699777de39_250x250.png" src="https://t.imgaa.com/2019/04/04/5ca699777de39_250x250.png"></a></blockquote></blockquote></blockquote><br>
+<strong>avs+ plugins update 25.03.2019</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">- fixed avsresize parsing transfer function/primaries names when there is "-"; fixed zimg for Ryzen and Intel before Skylake CPUs.<br>
+- fixed AutoResize.avsi<br>
+- updated EdgeFixer for high bit-depth support<br>
+- added <strong>Fixer.avsi</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">Alternative of FixRow(Column)Brightness/FillBorder/BalanceBorders/bbmod(BalanceBorders2) - Fixer(left, top, right, bottom, "radius", "cleft", "ctop", "cright", "cbottom", "cradius", "chroma"). The parameters between " " are optional and are referred to chroma planes.<br>
+<br>
+EdgeFixer required. High bit-depth supported.<br>
+<br>
+By default chroma=false and the filter is applied only to luma plane. When fixing only 1px on a side/top/bottom usually only luma plane is changed, so there is no point processing chroma planes.<br>
+<br>
+When chroma=true, chroma planes are processed too. cleft, ctop, cright, cbottom, cradius can be omitted, default values should be ok for the most of cases. Default values of cleft, ctop, cright, cbottom are 0.5 of the equivalent luma parameters (rounded down).<br>
+<br>
+Some examples:<br>
+Fixer(0,2,1,3) #only luma plane is processed<br>
+Fixer(0,2,1,3,chroma=true) #luma and chroma planes are processed for top, right side and bottom.<br>
+Fixer(0,2,1,3,chroma=true, cbottom=2) #same as above except on bottom 2px of chroma planes are filtered.<br>
+<br>
+<strong>Source vs Fixer only luma vs Fixer luma + chroma vs FillBorder + bbmod(thresh=128, blur=999)</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler"><a rel="noreferrer" target="_blank" href="https://imgaa.com/image/5c98952308e95"><img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://t.imgaa.com/2019/03/25/5c98952308e95_180x180.png" src="https://t.imgaa.com/2019/03/25/5c98952308e95_180x180.png"></a>   <a rel="noreferrer" target="_blank" href="https://imgaa.com/image/5c98952423d90"><img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://t.imgaa.com/2019/03/25/5c98952423d90_180x180.png" src="https://t.imgaa.com/2019/03/25/5c98952423d90_180x180.png"></a>   <a rel="noreferrer" target="_blank" href="https://imgaa.com/image/5c9895250888d"><img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://t.imgaa.com/2019/03/25/5c9895250888d_180x180.png" src="https://t.imgaa.com/2019/03/25/5c9895250888d_180x180.png"></a>   <a rel="noreferrer" target="_blank" href="https://imgaa.com/image/5c989525e2a01"><img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://t.imgaa.com/2019/03/25/5c989525e2a01_180x180.png" src="https://t.imgaa.com/2019/03/25/5c989525e2a01_180x180.png"></a>   <a rel="noreferrer" target="_blank" href="https://imgaa.com/image/5c98952753d68"><img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://t.imgaa.com/2019/03/25/5c98952753d68_180x180.png" src="https://t.imgaa.com/2019/03/25/5c98952753d68_180x180.png"></a>   <a rel="noreferrer" target="_blank" href="https://imgaa.com/image/5c9895283306c"><img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://t.imgaa.com/2019/03/25/5c9895283306c_180x180.png" src="https://t.imgaa.com/2019/03/25/5c9895283306c_180x180.png"></a>   <a rel="noreferrer" target="_blank" href="https://imgaa.com/image/5c98952941f24"><img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://t.imgaa.com/2019/03/25/5c98952941f24_180x180.png" src="https://t.imgaa.com/2019/03/25/5c98952941f24_180x180.png"></a>   <a rel="noreferrer" target="_blank" href="https://imgaa.com/image/5c98952a29fbf"><img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://t.imgaa.com/2019/03/25/5c98952a29fbf_180x180.png" src="https://t.imgaa.com/2019/03/25/5c98952a29fbf_180x180.png"></a></blockquote><br>
+<strong>Source vs Fixer only luma vs Fixer luma + chroma vs bbmod(thresh=128, blur=999)</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler"><a rel="noreferrer" target="_blank" href="https://imgaa.com/image/5c98952cf12e0"><img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://t.imgaa.com/2019/03/25/5c98952cf12e0_180x180.png" src="https://t.imgaa.com/2019/03/25/5c98952cf12e0_180x180.png"></a>   <a rel="noreferrer" target="_blank" href="https://imgaa.com/image/5c98952dcdc95"><img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://t.imgaa.com/2019/03/25/5c98952dcdc95_180x180.png" src="https://t.imgaa.com/2019/03/25/5c98952dcdc95_180x180.png"></a>   <a rel="noreferrer" target="_blank" href="https://imgaa.com/image/5c98952ed6257"><img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://t.imgaa.com/2019/03/25/5c98952ed6257_180x180.png" src="https://t.imgaa.com/2019/03/25/5c98952ed6257_180x180.png"></a>   <a rel="noreferrer" target="_blank" href="https://imgaa.com/image/5c989530198ff"><img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://t.imgaa.com/2019/03/25/5c989530198ff_180x180.png" src="https://t.imgaa.com/2019/03/25/5c989530198ff_180x180.png"></a></blockquote><br>
+<strong>Speed comparison: Fixer only luma vs Fixer luma + chroma vs FillBorder + bbmod(thresh=128, blur=999)</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler"><a rel="noreferrer" target="_blank" href="https://imgaa.com/image/5c989706e4f76"><img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://t.imgaa.com/2019/03/25/5c989706e4f76_180x180.png" src="https://t.imgaa.com/2019/03/25/5c989706e4f76_180x180.png"></a>  <a rel="noreferrer" target="_blank" href="https://imgaa.com/image/5c989706e5d46"><img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://t.imgaa.com/2019/03/25/5c989706e5d46_180x180.png" src="https://t.imgaa.com/2019/03/25/5c989706e5d46_180x180.png"></a>  <a rel="noreferrer" target="_blank" href="https://imgaa.com/image/5c989706e7303"><img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://t.imgaa.com/2019/03/25/5c989706e7303_180x180.png" src="https://t.imgaa.com/2019/03/25/5c989706e7303_180x180.png"></a></blockquote></blockquote></blockquote><br>
+<strong>avs+ plugins update 19.03.2019</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">- updated avsresize with two new options (nominal_luminance, approximate_gamma)<br>
+- added avsresize readme<br>
+- added Average<br>
+- added HDRTools<br>
+- added libfftw3f-3 for better compatibility<br>
+- added <a rel="noreferrer" target="_blank" href="https://github.com/sekrit-twc/EdgeFixer">EdgeFixer</a>: ContinuityFixer(left, top, right, bottom); ReferenceFixer(clip ref, left, top, right, bottom, radius). It's kind of auto FixRow/ColumnBrightness.</blockquote></blockquote>									<div class="forum-post__edited">
+																								Last edited by
+						<a class="username" href="user.php?id=112041">saiclabs</a> <span class="time" title="Jan 12 2020, 18:46">1 week, 1 day ago</span>					</div>
+							</div>
