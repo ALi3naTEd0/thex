@@ -1,0 +1,69 @@
+<div class="forum-post__bodyguard" id="content1704732">
+				<img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://bitbucket.org/repo/49Lnnp/images/1414030778-x265LogoSmall.png" src="https://bitbucket.org/repo/49Lnnp/images/1414030778-x265LogoSmall.png"><br>
+<br>
+<span class="bbcode-size-3"><strong><span style="color:red">Why?</span></strong></span><br>
+<blockquote>x265 and x264 are two different video compression standards that are used to compress video in size but still maintain the quality of the video. x264 is an earlier codec and is used in a lot of videos nowdays and x265 is a newer standard.<br>
+<br>
+Now if you want a technical description then according to Wikipedia:<br>
+<br>
+“H.264 or MPEG-4 Part 10, Advanced Video Coding (MPEG-4 AVC) is a block-oriented motion-compensation-based video compression standard that is currently one of the most commonly used formats”<br>
+<br>
+“High Efficiency Video Coding (HEVC), also known as H.265, is a video compression standard, one of several potential successors to the widely used AVC (H.264 or MPEG-4 Part 10)”<br>
+<br>
+But what does it mean in the real world. a video compressed using the H265 standard would be smaller in size and would be better in quality for a similar video compressed in H264. But the devil lies in the detail. Depending on whom you ask, both the standards have a lot of proponents.<br>
+<br>
+Some proponents of H264 are of the opinion that since H264 uses a higher bit rate, hence the video quality of H264 is better, but then the trade off would be the size.<br>
+<br>
+Proponents of H265 say that for the reduction in size you get, H265 provides a better quality then any of the other compression codecs.<br>
+<br>
+Overall for the same size of video H265 should offer superior quality as compared to H264.<br>
+<span id="imglink_httpscdnshopifycomsfiles100954332filesHEVCmain1024x1024jpg3486"><a href="#" id="imglinktoggle_httpscdnshopifycomsfiles100954332filesHEVCmain1024x1024jpg3486" onclick="toggleImage('httpscdnshopifycomsfiles100954332filesHEVCmain1024x1024jpg3486','https://cdn.shopify.com/s/files/1/0095/4332/files/HEVC_main_1024x1024.jpg');return false;">(Show Image)</a></span><br><img id="img_httpscdnshopifycomsfiles100954332filesHEVCmain1024x1024jpg3486" class="hidden bbcode__image" onclick="lightbox.init(this,500);" alt="https://cdn.shopify.com/s/files/1/0095/4332/files/HEVC_main_1024x1024.jpg"><br>
+</blockquote><br>
+<br>
+<span class="bbcode-size-3"><strong><span style="color:red">The things we need</span></strong></span><br>
+<span class="bbcode-size-2"><a rel="noreferrer" target="_blank" href="https://github.com/FFMS/ffms2/releases">FFMS latest release</a><br>
+<span class="bbcode-size-2"><a rel="noreferrer" target="_blank" href="http://avisynth.nl/index.php/LSMASHSource/LWLibavVideoSource">LSMASHSource</a><br>
+<span class="bbcode-size-2"><a rel="noreferrer" target="_blank" href="http://rationalqm.us/dgdecnv/dgdecnv.html">DGIndexNV</a><br>
+<a rel="noreferrer" target="_blank" href="https://github.com/pinterf/AviSynthPlus/releases/download/r2772-MT/AviSynthPlus-MT-r2772-with-vc_redist.exe">AviSynth+</a> - <span style="color:green">Default install - dont check/uncheck anything during installation</span><br>
+<a rel="noreferrer" target="_blank" href="https://github.com/gispos/AvsPmod/releases/download/2.6.1.0.r2/AvsPmod_v2.6.1.0.r2_.Windows_x86-64.zip">AvsPmod GPo</a> - <span style="color:green">Any other version before 2.6. * will not work</span><br>
+<a rel="noreferrer" target="_blank" href="https://mediaarea.net/download/binary/mediainfo-gui/19.09/MediaInfo_GUI_19.09_Windows.exe">MediaInfo latest version</a><br>
+<a rel="noreferrer" target="_blank" href="https://mega.nz/#!3jZVQSDb!GCjbWj739lvg2Mp9_RLZ5F5ga3aEu_cPYKo8fqUpW7c">x265 encoder</a><br>
+<a rel="noreferrer" target="_blank" href="https://mega.nz/#!PiRxTSiR!1AGv0y6oPECPHxgEZ0YByvuvrFZqMxNPFBU25dmcBXk">avs2yuv64</a><br>
+<a rel="noreferrer" target="_blank" href="https://mega.nz/#F!PjQnGYwK!VYn4phaxnEVt2FedI86JtA">Plugins pack</a> - <span style="color:green">Overide them to C:\Program Files (x86)\AviSynth+</span><br>
+<a rel="noreferrer" target="_blank" href="https://www.videohelp.com/software/eac3to">eac3to - latest</a></span><br>
+<br>
+<br>
+<span class="bbcode-size-3"><strong><span style="color:red">That .bat file example with some "kinda" default x265 settings</span></strong></span><br>
+<blockquote><span class="bbcode-size-2">avs2yuv64.exe -depth 10 avsscript.avs - | x265.exe -D 10 --crf 15 --preset slower --level-idc 5.1 --high-tier --ref 6 --bframes 16 --rd 4 --me star --subme 5 --merange 57 --ipratio 1.3 --pbratio 1.2 --aq-mode 4 --aq-strength 1.00 --qcomp 0.60 --psy-rd 1.25 --psy-rdoq 1.00 --ctu 64 --rc-lookahead 60 --deblock -3:-3 --cbqpoffs 0 --crqpoffs 0 --qg-size 8 --range limited --no-frame-dup --selective-sao 0 --no-cutree --tu-intra-depth 4 --tu-inter-depth 4 --no-rskip --no-tskip --no-early-skip --no-rect --no-amp --no-sao --aud --repeat-headers --hrd --hdr-opt --colorprim bt2020 --colormatrix bt2020nc --transfer smpte2084 --master-display "G(13250,34500)B(7500,3000)R(34000,16000)WP(15635,16450)L(40000000,50)" --max-cll=577,512  --chromaloc 2 --pmode --output "encode.hevc" --y4m - 2&gt; encode.log</span></blockquote><br>
+<br>
+<br>
+<span class="bbcode-size-3"><strong><span style="color:red">Settings required to change for each movie separately - HDR Baby</span></strong></span><br>
+<span class="bbcode-size-2">--master-display &amp; --max-cll values (Just those marked with red in .bat file example).<br>
+These settings will be selected based on Mastering display luminance (--master-display) and Maximum Content Light Level &amp; Maximum Frame-Average Light Level (--max-cll) for each movie separately.<br>
+Those are shown doing a mediainfo on the extracted video, or simply checking a remux mediainfo.<br>
+As an example I took the Venom 2018 movie where mediainfo shows:<br>
+<blockquote>Mastering display luminance              : min: <span style="color:red">0.0050</span> cd/m2, max: <span style="color:red">4000</span> cd/m2<br>
+Maximum Content Light Level              : <span style="color:red">3903</span> cd/m2<br>
+Maximum Frame-Average Light Level        : <span style="color:red">1076</span> cd/m2</blockquote><br>
+In this case master-display=G(13250,34500)B(7500,3000)R(34000,16000)WP(15635,16450)L(<span style="color:red">40000000,50</span>) and max-cll=<span style="color:red">3903,1076</span><br>
+<br>
+About Maximum Content Light Level and Maximum Frame-Average Light Level ... If those not present -&gt; <span style="color:red">max-cll=0,0</span><br>
+<br>
+More explicit thing:<br>
+<blockquote>Display P3<br>
+--master-display "G(13250,34500)B(7500,3000)R(34000,16000)WP(15635,16450)L(10000000,1)"<br>
+BT.2020<br>
+--master-display "G(8500,39850)B(6550,2300)R(35400,14600)WP(15635,16450)L(40000000,50)"<br>
+<br>
+You can always do a test encode and check if MediaInfo says Display P3 or BT2020.</blockquote><br>
+</span><br>
+<br>
+<span class="bbcode-size-3"><strong><span style="color:red">ToneMapping</span></strong></span><br>
+<span class="bbcode-size-2">Yeah... this is mandatory for comparison screenshots and very useful while comparing in AvsPmod:</span><br>
+<blockquote>ConvertYUVtoLinearRGB(Color=0,OOTF=false,OutputMode=2) ConvertLinearRGBtoYUV(Color=0,HDRMode=1,HLGLw=1000,HLGColor=2,OOTF=false) ConvertYUVtoXYZ(Color=1) ConvertXYZtoYUV(pColor=1)</blockquote><br>
+<br>
+<span class="bbcode-size-3"><strong><span style="color:red">Things that you should know</span></strong></span><br>
+<span class="bbcode-size-2"><ul><li>None yet <img border="0" src="static/common/smileys/biggrin.gif" alt=""></li></ul></span></span></span>									<div class="forum-post__edited">
+																								Last edited by
+						<a class="username" href="user.php?id=117031">Cristi</a> <span class="time" title="Dec 14 2019, 18:02">1 month, 2 weeks ago</span>					</div>
+							</div>
